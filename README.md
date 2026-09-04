@@ -204,13 +204,11 @@ Minha jornada na tecnologia está em constante evolução.
 Atualmente, meu foco está em fortalecer meus conhecimentos em:
 
 ```text
-HTML5
-CSS3
+Linguagem (C)
 Python
 JavaScript
 Lógica de Programação
 Desenvolvimento Web
 Banco de Dados
-Modelagem de Dados
 Git e GitHub
 Inteligência Artificial
