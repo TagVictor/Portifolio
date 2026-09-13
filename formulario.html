@@ -1,5 +1,4 @@
- — formulário de contato
-
+ 
  <!DOCTYPE html>
  <html lang="pt-br">
  <head>
@@ -9,20 +8,58 @@
     <title>FORMULARIO</title>
  </head>
  <body class="pagina-interna">
-      
-        <section id="formulario" class="formulario" >
-            <div class="interface">
-                <h2 class="titulo">FALA<span>COMIGO.</span></h2>
 
-                <form action="">
-                    <input type="text" name="" id="" placeholder="Seu nome completo:" required>
-                    <input type="text" name="" id="" placeholder="Seu e-mail:" required>
-                    <input type="text" name="" id="" placeholder="Seu celular:">
-                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
-                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
-                </form>
-            </div><!--interface-->
-        </section><!--formulario-->
+       <header>
+
+           <div class="interface">
+
+               <nav class="menu-desktop" >
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="formulario.html"  class="ativo">Contato</a></li>
+                            <li><a href="curriculo.html">Curriculo</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="graficos.html">Gráficos</a></li>
+                            <li><a href="multimidia.html">Multimídia</a></li>
+                        </ul>
+                </nav><!--Menu Desktop-->
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul>
+                         <li><a href="index.html">Início</a></li>
+                         <li><a href="curriculo.html">Curriculo</a></li>
+                         <li><a href="#projetos">Projetos</a></li>
+                         <li><a href="formulario.html" class="ativo">Contato</a></li>
+                         <li><a href="graficos.html">Gráficos</a></li>
+                         <li><a href="multimidia.html">Multimídia</a></li>
+                    </ul>
+                </nav>
+
+            </div><!--menu-mobile-->
+
+        </div><!--INTERFACE-->
+       </header>
+
+
+        <main>
+            <section id="formulario" class="formulario" >
+                <div class="interface">
+                    <h2 class="titulo">FALA<span>COMIGO.</span></h2>
+                    <form action="">
+                        <input type="text" name="" id="" placeholder="Seu nome completo:" required>
+                        <input type="text" name="" id="" placeholder="Seu e-mail:" required>
+                        <input type="text" name="" id="" placeholder="Seu celular:">
+                        <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+                        <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                    </form>
+                </div><!--interface-->
+            </section><!--formulario-->
+        </main>
 
 
 

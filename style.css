@@ -1,26 +1,34 @@
-/* ESTILO GERAL */
+
+/* ================================================================
+   LEGENDA DOS COMENTÁRIOS DE CHECKPOINT NESTE ARQUIVO:
+   CP1 -> CSS básico (cores, tipografia, box model, componentes)
+   CP2 -> Responsividade (Flexbox e media queries)
+   ================================================================ */
+ 
+/* ESTILO GERAL (CP1) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
+ 
 }
-
+ 
 body {
     background-color: #000;
     height: 100vh;
 }
-
+ 
 .interface {
     max-width: 1280px;
     margin: 0 auto;
 }
-
+ 
+/* CP2: classe base do Flexbox, usada em quase todo o layout do site */
 .flex {
     display: flex;
 }
-
+ 
 .btn-contato button {
     padding: 10px 40px;
     font-size: 18px;
@@ -31,66 +39,66 @@ body {
     cursor: pointer;
     transition: .2s;
 }
-
+ 
 h2.titulo {
     color: #fff;
     font-size: 38px;
     text-align: center;
 }
-
+ 
 h2.titulo span {
     color: rgb(0, 225, 255);
 }
-
+ 
 button:hover,
 form .btn-enviar input:hover {
     box-shadow: 0px 0px 8px rgb(0, 225, 255);
     transform: scale(1.05);
 }
-
-/* ESTILO DO CABEÇALHO */
+ 
+/* ESTILO DO CABEÇALHO (CP1) */
 header {
     padding: 40px 4%;
 }
-
+ 
 header>.interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
+ 
 header a {
     color:rgb(0, 225, 255);
     text-decoration: none;
     display: inline-block;
     transition: .2s;
 }
-
+ 
 header nav.menu-desktop a:hover {
     color: #fff;
     transform: scale(1.05);
 }
-
+ 
 header nav ul {
     list-style-type: none;
 }
-
+ 
 header nav.menu-desktop ul li {
     display: inline-block;
     padding: 0 40px;
 }
-
-/* ESTILO DO MENU MOBILE */
-
+ 
+/* ESTILO DO MENU MOBILE (CP2 - responsividade / CP3 - depende do JS em menu.js) */
+ 
 .btn-abrir-menu{
     display: none;
 }
-
+ 
 .btn-abrir-menu i{
     color: rgb(0, 225, 255);
     font-size: 40px;
 }
-
+ 
 .menu-mobile{
     background-color: #000;
     height: 100vh;
@@ -102,29 +110,29 @@ header nav.menu-desktop ul li {
     overflow: hidden;
     transition: .5s;
 }
-
+ 
 .menu-mobile.abrir-menu{
     width: 70%;
 }
-
+ 
 .menu-mobile.abrir-menu ~ .overlay-menu{
     display: block;
 }
-
-
+ 
+ 
 .menu-mobile .btn-fechar{
     padding: 20px 5%;
 }
-
+ 
 .menu-mobile .btn-fechar i{
     color: rgb(0, 225, 255);
     font-size: 30px;
 }
-
+ 
 .menu-mobile nav ul{
     text-align: right;
 }
-
+ 
 .menu-mobile nav ul li a{
     color: #fff;
     font-size: 20px;
@@ -132,12 +140,12 @@ header nav.menu-desktop ul li {
     padding: 20px 8%;
     display: block;
 }   
-
+ 
 .menu-mobile nav ul li a:hover{
     background-color:rgb(0, 225, 255);
     color: #000;
 }
-
+ 
 .overlay-menu{
     background-color: #000000df;
     width: 100%;
@@ -148,33 +156,34 @@ header nav.menu-desktop ul li {
     z-index: 88888;
     display: none;
 }
-
-/* ESTILO DO TOPO DO SITE */
+ 
+/* ESTILO DO TOPO DO SITE (CP1 conteúdo / CP2 imagem adaptável) */
 section.topo-do-site {
     padding: 40px 4%;
 }
-
+ 
 section.topo-do-site .flex {
     align-items: center;
     justify-content: center;
     gap: 90px;
 }
-
+ 
 .topo-do-site h1 {
     color: #fff;
     font-size: 42px;
     line-height: 40px;
 }
-
+ 
 .topo-do-site .txt-topo-site h1 span {
     color:rgb(0, 225, 255);
 }
-
+ 
 .topo-do-site .txt-topo-site p {
     color: #fff;
     margin: 40px 0;
 }
-
+ 
+/* CP2: imagem responsiva (max-width + width 100% + height auto) */
 .topo-do-site .img-topo-site img {
     position: relative;
     max-width: 350px;   /* ajuste esse valor ao gosto */
@@ -185,13 +194,13 @@ section.topo-do-site .flex {
     animation: flutuar 2s ease-in-out infinite alternate,
                brilhar 3s ease-in-out infinite alternate;
 }
-
-
+ 
+ 
 @keyframes flutuar {
     0% {
         top: 0;
     }
-
+ 
     100% {
         top: 30px;
     }
@@ -204,17 +213,17 @@ section.topo-do-site .flex {
         filter: drop-shadow(0 0 40px rgba(0, 225, 255, 0.65));
     }
 }
-
-
-/* ESTILO DAS ESPECIALIDADES */
+ 
+ 
+/* ESTILO DAS ESPECIALIDADES (CP1 conteúdo / CP2 Flexbox) */
 section.especiliadades {
     padding: 40px 4%;
 }
-
+ 
 section.especiliadades .flex {
     gap: 60px;
 }
-
+ 
 .especiliadades .especialidades-box {
     color: #fff;
     padding: 40px;
@@ -222,75 +231,75 @@ section.especiliadades .flex {
     margin-top: 45px;
     transition: .2s;
 }
-
+ 
 .especiliadades .especialidades-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px #ffffff78;
 }
-
+ 
 .especiliadades .especialidades-box i {
     font-size: 70px;
     color:rgb(0, 140, 255);
 }
-
+ 
 .especiliadades .especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
 }
-
-/* ESTILO DO SOBRE */
+ 
+/* ESTILO DO SOBRE (CP1 conteúdo / CP2 Flexbox) */
 section.sobre {
     padding: 80px 4%;
 }
-
+ 
 section.sobre .flex {
     align-items: center;
     gap: 60px;
 }
-
+ 
 .sobre .txt-sobre {
     color: #fff;
 }
-
+ 
 .sobre .txt-sobre h2 {
     font-size: 40px;
     line-height: 40px;
     margin-bottom: 30px;
 }
-
+ 
 .sobre .txt-sobre h2 span {
     color: rgb(0, 225, 255);
     display: block;
 }
-
+ 
 .sobre .txt-sobre p {
     margin: 20px 0;
     text-align: justify;
 }
-
+ 
 .btn-social button {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: none;
     background-color: rgb(0, 225, 255);
-    font-size: 22px;
+    font-size: 21px;
     cursor: pointer;
     margin: 0 5px;
     transition: .2s;
 }
-
-/* ESTILO DO PORTFÓLIO */
+ 
+/* ESTILO DO PORTFÓLIO (CP1 conteúdo / CP2 Flexbox) */
 section.portfolio {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
 }
-
+ 
 section.portfolio .flex {
     justify-content: space-around;
     margin-top: 60px;
 }
-
+ 
 .img-port {
     width: 360px;
     height: 460px;
@@ -301,11 +310,11 @@ section.portfolio .flex {
     border-radius: 40px;
     position: relative;
 }
-
+ 
 .img-port:hover {
     background-position: 100% 100%;
 }
-
+ 
 .overlay {
     position: absolute;
     top: 0;
@@ -323,16 +332,16 @@ section.portfolio .flex {
     opacity: 0;
     transition: .5s;
 }
-
+ 
 .overlay:hover {
     opacity: 1;
 }
-
-/* ESTILO DO FORMULÁRIO DE CONTATO */
+ 
+/* ESTILO DO FORMULÁRIO DE CONTATO (CP1 conteúdo / CP3 validação do formulário via JS, quando implementada) */
 section.formulario {
     padding: 80px 4%;
 }
-
+ 
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -342,7 +351,7 @@ form {
     gap: 10px;
     margin-top: 40px;
 }
-
+ 
 form input,
 form textarea {
     width: 100%;
@@ -354,17 +363,17 @@ form textarea {
     color: #fff;
     font-size: 18px;
 }
-
+ 
 form textarea {
     resize: none;
     max-height: 200px;
 }
-
+ 
 form .btn-enviar {
     margin-top: 20px;
     text-align: center;
 }
-
+ 
 form .btn-enviar input {
     width: 120px;
     background-color: rgb(0, 225, 255);
@@ -373,87 +382,88 @@ form .btn-enviar input {
     cursor: pointer;
     transition: .2s;
 }
-
-/* ESTILO DO RODAPÉ */
-
+ 
+/* ESTILO DO RODAPÉ (CP1) */
+ 
 footer {
     padding: 40px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
 }
-
+ 
 footer .flex {
     justify-content: space-between;
 }
-
+ 
 footer .line-footer {
     padding: 20px 0;
 }
-
+ 
 .borda {
     border-top: 2px solid rgb(0, 225, 255);
 }
-
+ 
 footer .line-footer p i {
     color: rgb(0, 225, 255);
     font-size: 22px;
 }
-
+ 
 footer .line-footer p a {
     color: #fff;
 }
-
+ 
+/* ===== CP2: MEDIA QUERIES - RESPONSIVIDADE (mobile, até 1020px) ===== */
 @media screen and (max-width: 1020px) {
-
+ 
     /* CLASSES GERAIS */
     .flex {
         flex-direction: column;
     }
-
+ 
     .topo-do-site .flex{
         flex-direction: column-reverse;
     }
-
+ 
     h2.titulo {
         font-size: 34px;
         line-height: 30px;
     }
-
+ 
     /* CABEÇALHO */
     .menu-desktop,
     .btn-contato {
         display: none;
     }
-
+ 
     /* TOPO DO SITE */
-
+ 
     section.topo-do-site .flex {
         gap: 40px;
     }
-
+ 
     section.topo-do-site {
         padding: 20px 8%;
     }
-
+ 
     .topo-do-site h1 {
         font-size: 30px;
     }
-
+ 
     .topo-do-site .img-topo-site img {
         width: 100%;
         border-radius: 70px;
         align-items: right;
     }
-
+ 
     /* ESPECIALIDADES */
     section.especiliadades {
         padding: 40px 8%;
     }
-
+ 
     /* SOBRE */
     section.sobre {
         padding: 80px 8%;
     }
-
+ 
     .sobre .txt-sobre h2 {
         font-size: 34px;
         line-height: 35px;
@@ -463,16 +473,16 @@ footer .line-footer p a {
     .btn-social{
         text-align: center;
     }
-
+ 
     .img-sobre img{
         width: 100%;
     }
-
+ 
     /* PORTFÓLIO */
     section.portfolio {
         padding: 80px 8%;
     }
-
+ 
     .img-port {
         width: 100%;
         max-width: 360px;
@@ -482,49 +492,49 @@ footer .line-footer p a {
     section.portfolio .flex {
        gap: 60px;
     }
-
+ 
     /* RODAPÉ */
     footer .flex {
         flex-direction: column;
         gap: 30px;
     }
-
+ 
     footer .line-footer {
         text-align: center;
     }
 }
-
+ 
 /* --------CURRICULO-------------*/
-
+ 
 /* =========================================================
-   ADIÇÕES PARA A PÁGINA CURRICULO.HTML
+   ADIÇÕES PARA A PÁGINA CURRICULO.HTML (CP1 conteúdo / CP2 responsividade)
    (cole este bloco no final do seu style.css original)
    ========================================================= */
-
+ 
 /* Link ativo no menu (indica em qual página o usuário está) */
 .menu-desktop a.ativo,
 .menu-mobile nav ul li a.ativo {
     color: #fff;
     font-weight: 600;
 }
-
+ 
 /* Texto de apresentação no topo do currículo */
 .topo-do-site .txt-topo-site .ola {
     color: #fff;
     font-size: 18px;
     font-weight: 300;
 }
-
+ 
 .topo-do-site .txt-topo-site .cargo {
     color: rgb(0, 225, 255);
     font-size: 22px;
     font-weight: 600;
     margin: 10px 0;
 }
-
-
+ 
+ 
 /* =========================================================
-   CARDS DE ESPECIALIDADES COM ALTURA IGUAL + ROLAGEM INTERNA
+   CARDS DE ESPECIALIDADES COM ALTURA IGUAL + ROLAGEM INTERNA (CP2)
    Evita que um card (ex: Projetos, com mais texto) fique
    maior que os outros da mesma seção.
    ========================================================= */
@@ -558,7 +568,7 @@ footer .line-footer p a {
 .especialidades-box .projeto-links {
     margin-top: 15px;
 }
-
+ 
 .especialidades-box .projeto-links a {
     color: rgb(0, 225, 255);
     text-decoration: none;
@@ -566,33 +576,33 @@ footer .line-footer p a {
     margin-right: 20px;
     transition: .2s;
 }
-
+ 
 .especialidades-box .projeto-links a:hover {
     text-decoration: underline;
 }*/
-
-/* Seção de contato (sem formulário, só texto + ícones sociais) */
+ 
+/* Seção de contato (sem formulário, só texto + ícones sociais) (CP1) */
 section.formulario .texto-contato {
     color: #fff;
     text-align: center;
     max-width: 600px;
     margin: 20px auto 0;
 }
-
+ 
 section.formulario .contato-social {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
-
+ 
 @media screen and (max-width: 1020px) {
     section.formulario .contato-social {
         margin-top: 20px;
     }
 }
-
+ 
 /* =========================================================
-   BOTÃO "CONTATO" DO CABEÇALHO SUMINDO EM PÁGINAS INTERNAS
+   BOTÃO "CONTATO" DO CABEÇALHO SUMINDO EM PÁGINAS INTERNAS (extra - animação/UX)
    Basta adicionar class="pagina-interna" na tag <body>
    de qualquer página "de dentro de uma pasta" (currículo,
    projetos, etc.) para o botão desaparecer com animação.
@@ -624,3 +634,4 @@ body.pagina-interna header .btn-contato {
         pointer-events: none;
     }
 }
+ 
