@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- FIM GOOGLE FONTES -->
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- FIM BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="menu.js" defer></script>
+
+    <title>Currículo | Victor Gabriel</title>
+</head>
+<body class="pagina-interna">
+
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo portifó 50x50.png" alt="Victor">
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html">Especialidades</a></li>
+                    <li><a href="curriculo.html" class="ativo">Curriculo</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="formulario.html">
+                    <button>Contato</button>
+                </a>
+            </div><!--btn-contato-->
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html">Especialidades</a></li>
+                        <li><a href="curriculo.html" class="ativo">Curriculo</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="formulario.html">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div><!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div><!--interface-->
+    </header>
+
+    <main>
+        <!-- INÍCIO / APRESENTAÇÃO -->
+        <section class="topo-do-site" id="inicio">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <p class="ola">Olá, eu sou</p>
+                        <h1>Victor Gabriel<span>.</span></h1>
+                        <p class="cargo">Desenvolvedor em Formação</p>
+                        <p>Em formação em Análise e Desenvolvimento de Sistemas,
+                            com foco em desenvolvimento web e Front-end.</p>
+
+                        <div class="btn-contato">
+                            <a href="#projetos">
+                                <button>Ver meus projetos</button>
+                            </a>
+                        </div>
+                    </div><!--txt-topo-site-->
+
+                    <div class="img-topo-site">
+                        <img src="images/foto.png" alt="Victor Gabriel">
+                    </div><!--img-topo-site-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <!-- SOBRE -->
+        <section class="sobre" id="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="images/foto.png" alt="Victor Gabriel">
+                    </div><!--img-sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>Sobre mim<span>.</span></h2>
+                        <p>Sou estudante de Análise e Desenvolvimento de Sistemas,
+                            interessado em tecnologia, desenvolvimento web e criação
+                            de soluções digitais.</p>
+
+                        <p>Atualmente estou desenvolvendo meus conhecimentos em
+                            HTML5, CSS3, JavaScript, Python e lógica de programação.</p>
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+
+        <!-- FORMAÇÃO E CURSOS -->
+        <section class="especiliadades" id="formacao">
+            <div class="interface">
+                <h2 class="titulo">FORMAÇÃO E CURSOS<span>.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-mortarboard"></i>
+                        <h3>Análise e Desenvolvimento de Sistemas</h3>
+                        <p>Faculdade Braz Cubas — em formação.</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-award"></i>
+                        <h3>Competências Digitais e IA</h3>
+                        <p>Curso de 84 horas voltado ao desenvolvimento de
+                            competências digitais e utilização de Inteligência
+                            Artificial para o sucesso acadêmico.</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especiliadades-->
+
+        <!-- HABILIDADES -->
+        <section class="especiliadades" id="habilidades">
+            <div class="interface">
+                <h2 class="titulo">HABILIDADES<span>.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-slash"></i>
+                        <h3>Linguagens</h3>
+                        <p>HTML5, CSS3, JavaScript e Python.</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-cpu"></i>
+                        <h3>Lógica & Boas Práticas</h3>
+                        <p>Lógica de programação e desenvolvimento web.</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-git"></i>
+                        <h3>Ferramentas</h3>
+                        <p>Git e GitHub para versionamento de código.</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especiliadades-->
+
+        <!-- PROJETOS -->
+        <section class="especiliadades" id="projetos">
+            <div class="interface">
+                <h2 class="titulo">PROJETOS<span>.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-laptop"></i>
+                        <h3>Portfólio Pessoal</h3>
+                        <p>Website desenvolvido para apresentar minha trajetória,
+                            habilidades, projetos e conhecimentos em tecnologia.</p>
+                        <p><strong>Tecnologias:</strong> HTML5, CSS3 e JavaScript</p>
+                        <div class="projeto-links">
+                            <a href="#" target="_blank">Ver projeto</a>
+                            <a href="#" target="_blank">GitHub</a>
+                        </div>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-patch-question"></i>
+                        <h3>TechQuiz</h3>
+                        <p>Projeto de quiz relacionado à área de tecnologia,
+                            desenvolvido para testar conhecimentos de programação
+                            e conceitos de TI.</p>
+                        <p><strong>Tecnologias:</strong> HTML5, CSS3 e JavaScript</p>
+                        <div class="projeto-links">
+                            <a href="#" target="_blank">Ver projeto</a>
+                            <a href="#" target="_blank">GitHub</a>
+                        </div>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-tiktok"></i>
+                        <h3>Projeto TikTok</h3>
+                        <p>Projeto acadêmico inspirado na interface de uma
+                            plataforma de vídeos, desenvolvido durante o curso
+                            de Análise e Desenvolvimento de Sistemas.</p>
+                        <p><strong>Tecnologias:</strong> HTML5 e CSS3</p>
+                        <div class="projeto-links">
+                            <a href="#" target="_blank">Ver projeto</a>
+                            <a href="#" target="_blank">GitHub</a>
+                        </div>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especiliadades-->
+
+
+        <!-- CONTATO -
+        <section class="formulario" id="contato">
+            <div class="interface">
+                <h2 class="titulo">ENTRE EM<span>CONTATO.</span></h2>
+
+                <p class="texto-contato">Caso queira conhecer meu trabalho ou entrar
+                    em contato, utilize um dos canais abaixo.</p>
+
+                <div class="btn-social contato-social">
+                    <a href="https://github.com/TagVictor" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                    <a href="https://www.linkedin.com/in/victor-gabriel-morais-0197a0286" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
+                    <a href="mailto:gabrielmoraisdeoliveirav3@gmail.com"><button><i class="bi bi-envelope-fill"></i></button></a>
+                </div><!-btn-social-->
+            </div><!--interface--
+        </section><--formulario-->
+
+
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="img/logo portifó 50x50.png" alt="Logotipo Victor">
+                    </div><!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/oficial_victor29?igsh=b2t3cjRqdnI1MzE3" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.youtube.com/@CortesYL" target="_blank"><button><i class="bi bi-youtube"></i></button></a>
+                        <a href="https://www.linkedin.com/in/victor-gabriel-morais-0197a0286" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
+                        <a href="https://github.com/TagVictor" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                    </div><!--btn-social-->
+                </div>
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i><a href="mailto:gabrielmoraisdeoliveirav3@gmail.com">Envie-nos um e-mail</a></p>
+            </div><!--line-footer-->
+        </div><!--interface-->
+    </footer>
+
+</body>
+</html>
