@@ -1,17 +1,28 @@
-
-/* ================================================================
-   LEGENDA DOS COMENTÁRIOS DE CHECKPOINT NESTE ARQUIVO:
-   CP1 -> CSS básico (cores, tipografia, box model, componentes)
-   CP2 -> Responsividade (Flexbox e media queries)
+ /* ================================================================
+   ORGANIZAÇÃO DESTE ARQUIVO POR CHECKPOINT (CP1 → CP2 → CP3 → CP4)
+   ================================================================
+   CP1 - Estrutura HTML semântica e CSS básico
+         (reset, cores, tipografia, box model, aparência estática
+         dos componentes e do conteúdo)
+   CP2 - Responsividade (Flexbox e media queries — um breakpoint
+         para tablet e outro, mais específico, para celular)
+   CP3 - JavaScript (estilos que só existem por causa da interação
+         via JS — o menu mobile controlado pelo menu.js)
+   CP4 - Versão final (hover, transições, animações e detalhes
+         visuais de acabamento)
    ================================================================ */
  
-/* ESTILO GERAL (CP1) */
+ 
+/* ================================================================
+   CP1 — ESTRUTURA HTML SEMÂNTICA E CSS BÁSICO
+   ================================================================ */
+ 
+/* ESTILO GERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
- 
 }
  
 body {
@@ -22,11 +33,6 @@ body {
 .interface {
     max-width: 1280px;
     margin: 0 auto;
-}
- 
-/* CP2: classe base do Flexbox, usada em quase todo o layout do site */
-.flex {
-    display: flex;
 }
  
 .btn-contato button {
@@ -50,21 +56,9 @@ h2.titulo span {
     color: rgb(0, 225, 255);
 }
  
-button:hover,
-form .btn-enviar input:hover {
-    box-shadow: 0px 0px 8px rgb(0, 225, 255);
-    transform: scale(1.05);
-}
- 
-/* ESTILO DO CABEÇALHO (CP1) */
+/* CABEÇALHO */
 header {
     padding: 40px 4%;
-}
- 
-header>.interface {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
  
 header a {
@@ -72,11 +66,6 @@ header a {
     text-decoration: none;
     display: inline-block;
     transition: .2s;
-}
- 
-header nav.menu-desktop a:hover {
-    color: #fff;
-    transform: scale(1.05);
 }
  
 header nav ul {
@@ -88,7 +77,530 @@ header nav.menu-desktop ul li {
     padding: 0 40px;
 }
  
-/* ESTILO DO MENU MOBILE (CP2 - responsividade / CP3 - depende do JS em menu.js) */
+/* Link ativo no menu (indica em qual página o usuário está) */
+.menu-desktop a.ativo,
+.menu-mobile nav ul li a.ativo {
+    color: #fff;
+    font-weight: 600;
+}
+ 
+/* TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
+}
+ 
+.topo-do-site h1 {
+    color: #fff;
+    font-size: 42px;
+    line-height: 40px;
+}
+ 
+.topo-do-site .txt-topo-site h1 span {
+    color:rgb(0, 225, 255);
+}
+ 
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 40px 0;
+}
+ 
+/* Texto de apresentação no topo do currículo */
+.topo-do-site .txt-topo-site .ola {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+}
+ 
+.topo-do-site .txt-topo-site .cargo {
+    color: rgb(0, 225, 255);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+ 
+/* ESPECIALIDADES */
+section.especiliadades {
+    padding: 40px 4%;
+}
+ 
+.especiliadades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+ 
+.especiliadades .especialidades-box i {
+    font-size: 70px;
+    color:rgb(0, 140, 255);
+}
+ 
+.especiliadades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+ 
+/* Cards com altura igual entre si (evita que um fique maior que os outros) */
+.especiliadades .especialidades-box {
+    max-height: 380px;
+    overflow-y: auto;
+}
+ 
+/* Links dentro dos cards de projeto (seção Projetos)
+.especialidades-box .projeto-links {
+    margin-top: 15px;
+}
+ 
+.especialidades-box .projeto-links a {
+    color: rgb(0, 225, 255);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 20px;
+    transition: .2s;
+}
+ 
+.especialidades-box .projeto-links a:hover {
+    text-decoration: underline;
+}*/
+ 
+/* SOBRE */
+section.sobre {
+    padding: 80px 4%;
+}
+ 
+.sobre .txt-sobre {
+    color: #fff;
+}
+ 
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+ 
+.sobre .txt-sobre h2 span {
+    color: rgb(0, 225, 255);
+    display: block;
+}
+ 
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+ 
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(0, 225, 255);
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+ 
+/* PORTFÓLIO */
+section.portfolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+ 
+.img-port {
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+}
+ 
+/* FORMULÁRIO DE CONTATO */
+section.formulario {
+    padding: 80px 4%;
+}
+ 
+form input,
+form textarea {
+    width: 100%;
+    background-color: #242424;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+ 
+form textarea {
+    resize: none;
+    max-height: 200px;
+}
+ 
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+}
+ 
+form .btn-enviar input {
+    width: 120px;
+    background-color: rgb(0, 225, 255);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+ 
+/* Seção de contato do currículo (sem formulário, só texto + ícones sociais) */
+section.formulario .texto-contato {
+    color: #fff;
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+ 
+/* RODAPÉ */
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+ 
+footer .line-footer {
+    padding: 20px 0;
+}
+ 
+.borda {
+    border-top: 2px solid rgb(0, 225, 255);
+}
+ 
+footer .line-footer p i {
+    color: rgb(0, 225, 255);
+    font-size: 22px;
+}
+ 
+footer .line-footer p a {
+    color: #fff;
+}
+ 
+/* ACESSIBILIDADE: campo visível só para leitor de tela (usado nos <label> do formulario.html) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+ 
+/* PÁGINAS GRAFICOS.HTML E MULTIMIDIA.HTML */
+.grafico-legenda {
+    color: #ffffffa6;
+    text-align: center;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+ 
+.midia-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 20px;
+}
+ 
+ 
+/* ================================================================
+   CP2 — RESPONSIVIDADE (FLEXBOX E MEDIA QUERIES)
+   ================================================================ */
+ 
+/* Classe base do Flexbox, usada em quase todo o layout do site */
+.flex {
+    display: flex;
+}
+ 
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+ 
+/* Imagem responsiva (max-width + width 100% + height auto) */
+.topo-do-site .img-topo-site img {
+    position: relative;
+    max-width: 350px;   /* ajuste esse valor ao gosto */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+ 
+section.especiliadades .flex {
+    gap: 60px;
+}
+ 
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+ 
+section.portfolio .flex {
+    justify-content: space-around;
+    margin-top: 60px;
+}
+ 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+ 
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+ 
+section.formulario .contato-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+ 
+footer .flex {
+    justify-content: space-between;
+}
+ 
+.grafico-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+ 
+/* Elementos que "escalam" mantendo proporção, mesma técnica da imagem do topo */
+#canvas-habilidades {
+    max-width: 100%;
+    height: auto;
+    background-color: #0d0d0d;
+    border-radius: 20px;
+}
+ 
+.svg-ilustracao {
+    width: 100%;
+    max-width: 220px;
+}
+ 
+.midia-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+ 
+.midia-box video,
+.midia-box audio {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 20px;
+}
+ 
+.midia-iframe {
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
+    margin: 40px auto 0;
+}
+ 
+/* ===== TABLET (telas até 1020px de largura) ===== */
+@media screen and (max-width: 1020px) {
+ 
+    /* CLASSES GERAIS */
+    .flex {
+        flex-direction: column;
+    }
+ 
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+ 
+    h2.titulo {
+        font-size: 34px;
+        line-height: 30px;
+    }
+ 
+    /* CABEÇALHO */
+    .menu-desktop,
+    header .btn-contato {
+        display: none;
+    }
+ 
+    /* TOPO DO SITE */
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+ 
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+ 
+    .topo-do-site h1 {
+        font-size: 30px;
+    }
+ 
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+        border-radius: 70px;
+        align-items: right;
+    }
+ 
+    /* ESPECIALIDADES */
+    section.especiliadades {
+        padding: 40px 8%;
+    }
+ 
+    .especiliadades .especialidades-box {
+        max-height: 320px;
+    }
+ 
+    /* SOBRE */
+    section.sobre {
+        padding: 80px 8%;
+    }
+ 
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+    
+    .btn-social{
+        text-align: center;
+    }
+ 
+    .img-sobre img{
+        width: 100%;
+    }
+ 
+    /* PORTFÓLIO */
+    section.portfolio {
+        padding: 80px 8%;
+    }
+ 
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    
+    section.portfolio .flex {
+       gap: 60px;
+    }
+ 
+    /* CONTATO (currículo) */
+    section.formulario .contato-social {
+        margin-top: 20px;
+    }
+ 
+    /* RODAPÉ */
+    footer .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+ 
+    footer .line-footer {
+        text-align: center;
+    }
+ 
+    /* MULTIMÍDIA / GRÁFICOS */
+    .midia-box video,
+    .midia-box audio,
+    .midia-iframe {
+        max-width: 100%;
+    }
+}
+ 
+/* =========================================================
+   CELULAR (telas até 600px de largura)
+   Aqui a gente refina ainda mais o que o bloco do TABLET
+   já ajustou. A única coisa que muda de forma diferente é
+   a seção do topo: em vez de empilhar (imagem embaixo do
+   texto), a imagem fica do LADO do texto, só que menor,
+   pra caber direitinho numa tela de celular.
+   ========================================================= */
+@media screen and (max-width: 600px) {
+ 
+    /* TOPO DO SITE: imagem ao lado do texto (não embaixo) */
+    .topo-do-site .flex {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+    }
+ 
+    .topo-do-site .txt-topo-site h1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+ 
+    .topo-do-site .txt-topo-site p {
+        font-size: 14px;
+        margin: 14px 0;
+    }
+ 
+    .topo-do-site .txt-topo-site .btn-contato button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+ 
+    .topo-do-site .img-topo-site img {
+        max-width: 110px;
+        border-radius: 20px;
+    }
+ 
+    /* ESPECIALIDADES: cards um pouco mais compactos */
+    .especiliadades .especialidades-box {
+        padding: 25px;
+    }
+ 
+    /* FORMULÁRIO: campos um pouco menores */
+    form input,
+    form textarea {
+        padding: 15px 12px;
+        font-size: 16px;
+    }
+}
+ 
+ 
+/* ================================================================
+   CP3 — JAVASCRIPT (interatividade do menu mobile, controlada
+   pelo menu.js — .abrir-menu é adicionada/removida via JS)
+   ================================================================ */
  
 .btn-abrir-menu{
     display: none;
@@ -118,7 +630,6 @@ header nav.menu-desktop ul li {
 .menu-mobile.abrir-menu ~ .overlay-menu{
     display: block;
 }
- 
  
 .menu-mobile .btn-fechar{
     padding: 20px 5%;
@@ -157,44 +668,40 @@ header nav.menu-desktop ul li {
     display: none;
 }
  
-/* ESTILO DO TOPO DO SITE (CP1 conteúdo / CP2 imagem adaptável) */
-section.topo-do-site {
-    padding: 40px 4%;
+ 
+/* ================================================================
+   CP4 — VERSÃO FINAL (hover, transições, animações e acabamento)
+   ================================================================ */
+ 
+button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px rgb(0, 225, 255);
+    transform: scale(1.05);
 }
  
-section.topo-do-site .flex {
-    align-items: center;
-    justify-content: center;
-    gap: 90px;
-}
- 
-.topo-do-site h1 {
+header nav.menu-desktop a:hover {
     color: #fff;
-    font-size: 42px;
-    line-height: 40px;
+    transform: scale(1.05);
 }
  
-.topo-do-site .txt-topo-site h1 span {
-    color:rgb(0, 225, 255);
+.especiliadades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffffff78;
 }
  
-.topo-do-site .txt-topo-site p {
-    color: #fff;
-    margin: 40px 0;
+.img-port:hover {
+    background-position: 100% 100%;
 }
  
-/* CP2: imagem responsiva (max-width + width 100% + height auto) */
+.overlay:hover {
+    opacity: 1;
+}
+ 
+/* Animação flutuante + brilho da imagem do topo */
 .topo-do-site .img-topo-site img {
-    position: relative;
-    max-width: 350px;   /* ajuste esse valor ao gosto */
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
     animation: flutuar 2s ease-in-out infinite alternate,
                brilhar 3s ease-in-out infinite alternate;
 }
- 
  
 @keyframes flutuar {
     0% {
@@ -205,6 +712,7 @@ section.topo-do-site .flex {
         top: 30px;
     }
 }
+ 
 @keyframes brilhar {
     0% {
         filter: drop-shadow(0 0 15px rgba(0, 225, 255, 0.35));
@@ -214,337 +722,7 @@ section.topo-do-site .flex {
     }
 }
  
- 
-/* ESTILO DAS ESPECIALIDADES (CP1 conteúdo / CP2 Flexbox) */
-section.especiliadades {
-    padding: 40px 4%;
-}
- 
-section.especiliadades .flex {
-    gap: 60px;
-}
- 
-.especiliadades .especialidades-box {
-    color: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    margin-top: 45px;
-    transition: .2s;
-}
- 
-.especiliadades .especialidades-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #ffffff78;
-}
- 
-.especiliadades .especialidades-box i {
-    font-size: 70px;
-    color:rgb(0, 140, 255);
-}
- 
-.especiliadades .especialidades-box h3 {
-    font-size: 28px;
-    margin: 15px 0;
-}
- 
-/* ESTILO DO SOBRE (CP1 conteúdo / CP2 Flexbox) */
-section.sobre {
-    padding: 80px 4%;
-}
- 
-section.sobre .flex {
-    align-items: center;
-    gap: 60px;
-}
- 
-.sobre .txt-sobre {
-    color: #fff;
-}
- 
-.sobre .txt-sobre h2 {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 30px;
-}
- 
-.sobre .txt-sobre h2 span {
-    color: rgb(0, 225, 255);
-    display: block;
-}
- 
-.sobre .txt-sobre p {
-    margin: 20px 0;
-    text-align: justify;
-}
- 
-.btn-social button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgb(0, 225, 255);
-    font-size: 21px;
-    cursor: pointer;
-    margin: 0 5px;
-    transition: .2s;
-}
- 
-/* ESTILO DO PORTFÓLIO (CP1 conteúdo / CP2 Flexbox) */
-section.portfolio {
-    padding: 80px 4%;
-    box-shadow: 0 0 40px 10px #ffffff1d;
-}
- 
-section.portfolio .flex {
-    justify-content: space-around;
-    margin-top: 60px;
-}
- 
-.img-port {
-    width: 360px;
-    height: 460px;
-    background-size: cover;
-    background-position: 100% 0%;
-    transition: 8s;
-    cursor: pointer;
-    border-radius: 40px;
-    position: relative;
-}
- 
-.img-port:hover {
-    background-position: 100% 100%;
-}
- 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000000b8;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
-    opacity: 0;
-    transition: .5s;
-}
- 
-.overlay:hover {
-    opacity: 1;
-}
- 
-/* ESTILO DO FORMULÁRIO DE CONTATO (CP1 conteúdo / CP3 validação do formulário via JS, quando implementada) */
-section.formulario {
-    padding: 80px 4%;
-}
- 
-form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 40px;
-}
- 
-form input,
-form textarea {
-    width: 100%;
-    background-color: #242424;
-    border: 0;
-    outline: 0;
-    padding: 20px 15px;
-    border-radius: 15px;
-    color: #fff;
-    font-size: 18px;
-}
- 
-form textarea {
-    resize: none;
-    max-height: 200px;
-}
- 
-form .btn-enviar {
-    margin-top: 20px;
-    text-align: center;
-}
- 
-form .btn-enviar input {
-    width: 120px;
-    background-color: rgb(0, 225, 255);
-    color: #000;
-    font-weight: 700;
-    cursor: pointer;
-    transition: .2s;
-}
- 
-/* ESTILO DO RODAPÉ (CP1) */
- 
-footer {
-    padding: 40px 4%;
-    box-shadow: 0 0 40px 10px #ffffff1d;
-}
- 
-footer .flex {
-    justify-content: space-between;
-}
- 
-footer .line-footer {
-    padding: 20px 0;
-}
- 
-.borda {
-    border-top: 2px solid rgb(0, 225, 255);
-}
- 
-footer .line-footer p i {
-    color: rgb(0, 225, 255);
-    font-size: 22px;
-}
- 
-footer .line-footer p a {
-    color: #fff;
-}
- 
-/* ===== CP2: MEDIA QUERIES - RESPONSIVIDADE (mobile, até 1020px) ===== */
-@media screen and (max-width: 1020px) {
- 
-    /* CLASSES GERAIS */
-    .flex {
-        flex-direction: column;
-    }
- 
-    .topo-do-site .flex{
-        flex-direction: column-reverse;
-    }
- 
-    h2.titulo {
-        font-size: 34px;
-        line-height: 30px;
-    }
- 
-    /* CABEÇALHO */
-    .menu-desktop,
-    .btn-contato {
-        display: none;
-    }
- 
-    /* TOPO DO SITE */
- 
-    section.topo-do-site .flex {
-        gap: 40px;
-    }
- 
-    section.topo-do-site {
-        padding: 20px 8%;
-    }
- 
-    .topo-do-site h1 {
-        font-size: 30px;
-    }
- 
-    .topo-do-site .img-topo-site img {
-        width: 100%;
-        border-radius: 70px;
-        align-items: right;
-    }
- 
-    /* ESPECIALIDADES */
-    section.especiliadades {
-        padding: 40px 8%;
-    }
- 
-    /* SOBRE */
-    section.sobre {
-        padding: 80px 8%;
-    }
- 
-    .sobre .txt-sobre h2 {
-        font-size: 34px;
-        line-height: 35px;
-        text-align: center;
-    }
-    
-    .btn-social{
-        text-align: center;
-    }
- 
-    .img-sobre img{
-        width: 100%;
-    }
- 
-    /* PORTFÓLIO */
-    section.portfolio {
-        padding: 80px 8%;
-    }
- 
-    .img-port {
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
-    }
-    
-    section.portfolio .flex {
-       gap: 60px;
-    }
- 
-    /* RODAPÉ */
-    footer .flex {
-        flex-direction: column;
-        gap: 30px;
-    }
- 
-    footer .line-footer {
-        text-align: center;
-    }
-}
- 
-/* --------CURRICULO-------------*/
- 
-/* =========================================================
-   ADIÇÕES PARA A PÁGINA CURRICULO.HTML (CP1 conteúdo / CP2 responsividade)
-   (cole este bloco no final do seu style.css original)
-   ========================================================= */
- 
-/* Link ativo no menu (indica em qual página o usuário está) */
-.menu-desktop a.ativo,
-.menu-mobile nav ul li a.ativo {
-    color: #fff;
-    font-weight: 600;
-}
- 
-/* Texto de apresentação no topo do currículo */
-.topo-do-site .txt-topo-site .ola {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 300;
-}
- 
-.topo-do-site .txt-topo-site .cargo {
-    color: rgb(0, 225, 255);
-    font-size: 22px;
-    font-weight: 600;
-    margin: 10px 0;
-}
- 
- 
-/* =========================================================
-   CARDS DE ESPECIALIDADES COM ALTURA IGUAL + ROLAGEM INTERNA (CP2)
-   Evita que um card (ex: Projetos, com mais texto) fique
-   maior que os outros da mesma seção.
-   ========================================================= */
- 
-.especiliadades .especialidades-box {
-    max-height: 380px;
-    overflow-y: auto;
-}
- 
-/* Barra de rolagem discreta, no mesmo tom do site */
+/* Barra de rolagem discreta dos cards, no mesmo tom do site */
 .especiliadades .especialidades-box::-webkit-scrollbar {
     width: 6px;
 }
@@ -558,56 +736,10 @@ footer .line-footer p a {
     border-radius: 10px;
 }
  
-@media screen and (max-width: 1020px) {
-    .especiliadades .especialidades-box {
-        max-height: 320px;
-    }
-}
- 
-/* Links dentro dos cards de projeto (seção Projetos) 
-.especialidades-box .projeto-links {
-    margin-top: 15px;
-}
- 
-.especialidades-box .projeto-links a {
-    color: rgb(0, 225, 255);
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 20px;
-    transition: .2s;
-}
- 
-.especialidades-box .projeto-links a:hover {
-    text-decoration: underline;
-}*/
- 
-/* Seção de contato (sem formulário, só texto + ícones sociais) (CP1) */
-section.formulario .texto-contato {
-    color: #fff;
-    text-align: center;
-    max-width: 600px;
-    margin: 20px auto 0;
-}
- 
-section.formulario .contato-social {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
- 
-@media screen and (max-width: 1020px) {
-    section.formulario .contato-social {
-        margin-top: 20px;
-    }
-}
- 
-/* =========================================================
-   BOTÃO "CONTATO" DO CABEÇALHO SUMINDO EM PÁGINAS INTERNAS (extra - animação/UX)
-   Basta adicionar class="pagina-interna" na tag <body>
-   de qualquer página "de dentro de uma pasta" (currículo,
-   projetos, etc.) para o botão desaparecer com animação.
-   ========================================================= */
- 
+/* Botão "Contato" do cabeçalho sumindo em páginas internas.
+   Basta adicionar class="pagina-interna" na tag <body> de
+   qualquer página "de dentro de uma pasta" (currículo, etc.)
+   para o botão desaparecer com animação. */
 body.pagina-interna header .btn-contato {
     overflow: hidden;
     animation: sumirBotaoContato 1.2s ease forwards;
@@ -634,4 +766,3 @@ body.pagina-interna header .btn-contato {
         pointer-events: none;
     }
 }
- 

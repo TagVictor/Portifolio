@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!--
+    ================================================================
+    LEGENDA DOS COMENTÁRIOS DE CHECKPOINT NESTE ARQUIVO:
+    CP1 -> Estrutura HTML semântica e conteúdo (header, nav, main, section, footer)
+    CP2 -> Responsividade (Flexbox + media queries, ver style.css)
+    CP3 -> JavaScript (menu.js)
+    ================================================================
+-->
 <head>
     <meta charset="UTF-8">
+    <!-- CP2: viewport configurado para responsividade (mobile-first) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,13 +22,15 @@
     <!-- FIM BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="style.css">
     
-
+ 
+    <!-- CP3: JavaScript - controla a abertura/fechamento do menu mobile -->
     <script src="menu.js" defer></script>
-
+ 
     <title>Potifólio Victor</title>
 </head>
 <body id="inicio">
     
+    <!-- ===== CP1: CABEÇALHO (header + nav semânticos) ===== -->
     <header>
         <div class="interface">
             <div class="logo">
@@ -27,7 +38,7 @@
                     <img src="img/logo portifó 50x50.png" alt="Victor">
                 </a>
             </div><!--logo-->
-
+ 
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="curriculo.html">Curriculo</a></li>
@@ -42,16 +53,17 @@
                     <button>Contato</button>
                 </a>
             </div><!--btn-contato-->
-
+ 
             <div class="btn-abrir-menu" id="btn-menu">
                 <i class="bi bi-list"></i>
             </div>
-
+ 
+            <!-- CP2/CP3: menu mobile - visual responsivo (CSS) + abre/fecha via JS -->
             <div class="menu-mobile" id="menu-mobile">
                 <div class="btn-fechar">
                     <i class="bi bi-x-lg"></i>
                 </div>
-
+ 
                 <nav>
                     <ul>
                         <li><a href="#inicio">Início</a></li>
@@ -63,22 +75,24 @@
                         <li><a href="multimidia.html">Multimídia</a></li>
                     </ul>
                 </nav>
-
+ 
             </div><!--menu-mobile-->
             <div class="overlay-menu" id="overlay-menu"></div>
         </div><!--interface-->
     </header>
-
+ 
+    <!-- ===== CP1: CONTEÚDO PRINCIPAL (main) ===== -->
     <main>
+        <!-- CP1: seção de apresentação (topo do site) -->
         <section class="topo-do-site">
             <div class="interface">
-                <div class="flex">
+                <div class="flex"><!-- CP2: layout em Flexbox, vira coluna no mobile (ver media query no style.css) -->
                     <div class="txt-topo-site">
                         <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL<span>.</span></h1>
                         <p>Criatividade e inovação andam lado a lado. Com uma combinação única 
                             de design impactante, funcionalidade intuitiva e otimização para 
                             resultados, estou pronto(a) para criar a presença online dos seus sonhos.</p>
-
+ 
                        <div class="btn-contato">
                             <a href="formulario.html">
                                 <button>Entre em contato</button>
@@ -87,48 +101,50 @@
                     </div> <!--txt-topo-site-->
                     
                     <div class="img-topo-site">
-
+ 
                         <img src="img/victor-só-corpo.png" alt="">
-
+ 
                     </div><!--img-topo-site-->
-
+ 
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--topo-do-site-->
-
-
+ 
+ 
+       <!-- CP1: seção "Sobre mim" -->
        <section class="sobre">
             <div class="interface">
-                <div class="flex">
+                <div class="flex"><!-- CP2: Flexbox (foto + texto lado a lado, empilha no mobile) -->
                     <div class="img-sobre">
                         <img src="images/foto.png" alt="">
                     </div><!--img-sobre-->
-
+ 
                     <div class="txt-sobre">
                     <h2>Olá, Sou Victor Gabriel<span>.</span></h2>
                         <p>Estou embarcando em uma jornada emocionante 
                             no mundo da programação. Atualmente, estudo Python, HTML e CSS, três das linguagens fundamentais 
                             para quem quer construir aplicações, sites e sistemas incríveis.</p>
-
+ 
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quidem quae iusto re
                             pellendus eaque, ipsum sed voluptate explicabo voluptas, dolorum porro sequi laudantium
                             ? Obcaecati quae, dolores illo officiis a numquam.</p>
-
+ 
                        <!---- <div class="btn-social">
                             <a href="#"><button><i class="bi bi-instagram"></i></button></a>
                             <a href="#"><button><i class="bi bi-youtube"></i></button></a>
                             <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
                         </div> <! --btn-social-->
-
+ 
                     </div><!--txt-sobre-->
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--sobre-->   
  
+        <!-- CP1: seção "Especialidades" -->
         <section class="especiliadades">
             <div class="interface">
                 <h2 class="titulo">MINHAS ESPECIALIDADES<span>.</span></h2>
-                <div class="flex">
+                <div class="flex"><!-- CP2: cards em Flexbox, empilham no mobile -->
                     <div class="especialidades-box">
                         <i class="bi bi-code-square"></i>
                         <h3>Website</h3>
@@ -139,7 +155,7 @@
                         usando conceitos de desenvolvimento web, estruturação de páginas, estilização e 
                         usabilidade.</p>
                     </div><!--especialidades-box-->
-
+ 
                     <div class="especialidades-box">
                         <i class="bi bi-cart"></i>
                         <h3>Loja online</h3>
@@ -148,9 +164,9 @@
                             produto é cuidadosamente selecionado e apresentado de forma impecável, garantindo que os 
                             clientes tenham uma experiência premium desde a escolha até a compra.
                         </p>
-
+ 
                     </div><!--especialidades-box-->
-
+ 
                     <div class="especialidades-box">
                         <i class="bi bi-wordpress"></i>
                         <h3>Blog</h3>
@@ -192,39 +208,40 @@
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--especiliadades-->
-
+ 
       <!--  <section class="sobre">
             <div class="interface">
                 <div class="flex">
                     <div class="img-sobre">
                         <img src="images/foto.png" alt="">
                     </div>< !--img-sobre-->
-
+ 
                    <!---- <div class="txt-sobre">
                         <h2>MUITO PRAZER, <span>SOU VICTOR GABRIEL.</span></h2>
                         <p>Estou embarcando em uma jornada emocionante 
                             no mundo da programação. Atualmente, estudo Python, HTML e CSS, três das linguagens fundamentais 
                             para quem quer construir aplicações, sites e sistemas incríveis.</p>
-
+ 
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quidem quae iusto re
                             pellendus eaque, ipsum sed voluptate explicabo voluptas, dolorum porro sequi laudantium
                             ? Obcaecati quae, dolores illo officiis a numquam.</p> --
-
+ 
                         <div class="btn-social">
                             <a href="#"><button><i class="bi bi-instagram"></i></button></a>
                             <a href="#"><button><i class="bi bi-youtube"></i></button></a>
                             <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
                         </div> < !--btn-social-->
-
+ 
                     </div><!--txt-sobre-->
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--sobre-->
-
+ 
+        <!-- CP1: seção "Portfólio" com o primeiro projeto real (Cordel) -->
         <section class="portfolio">
             <div class="interface">
                 <h2 class="titulo">MEU<span>PORTFÓLIO.</span></h2>
-                <div class="flex">
+                <div class="flex"><!-- CP2: cards em Flexbox, empilham no mobile -->
                     <div class="img-port" style="background-image: url(img/cordel_moderno_1920x6173.png);">
                         <div class="overlay"> <a href="https://tagvictor.github.io/Projeto-Cordel/" target="_blank">Projeto Cordel</a></div>
                     </div>
@@ -237,14 +254,14 @@
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--portfolio-->
-
-
-
+ 
+ 
+ 
  <!--
         <section id="formulario" class="formulario">
             <div class="interface">
                 <h2 class="titulo">FALA<span>COMIGO.</span></h2>
-
+ 
                 <form action="">
                     <input type="text" name="" id="" placeholder="Seu nome completo:" required>
                     <input type="text" name="" id="" placeholder="Seu e-mail:" required>
@@ -255,11 +272,12 @@
             </div> (interface-)
         </section> (formulario) --> 
             
-
-
-
+ 
+ 
+ 
     </main>
-
+ 
+    <!-- ===== CP1: RODAPÉ (footer semântico) ===== -->
     <footer>
         <div class="interface">
             <div class="line-footer">
@@ -269,22 +287,22 @@
                     </div><!--logo-footer-->
                     <div class="btn-social">
                         <a href="https://www.instagram.com/oficial_victor29?igsh=b2t3cjRqdnI1MzE3" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
-
+ 
                         <a href="mailto:gabrielmoraisdeoliveirav3@gmail.com"><button><i class="bi bi-envelope-at-fill"></i></button></a>
-
+ 
                         <a href="https://www.linkedin.com/in/victor-gabriel-morais-0197a0286" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
-
+ 
                         <a href="https://github.com/TagVictor" target="_blank"><button><i class="bi bi-github"></i></button></a>
-
+ 
                     </div><!--btn-social-->
                 </div>
             </div><!--line-footer-->
-
+ 
             <div class="line-footer borda">
                 <p><i class="bi bi-envelope-fill"></i><a href="mailto:gabrielmoraisdeoliveirav3@gmail.com">Envie-nos um e-mail</a></p>
             </div><!--line-footer-->
         </div><!--interface-->
     </footer>
-
+ 
 </body>
 </html>
