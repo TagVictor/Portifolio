@@ -1,17 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 <!--
     ================================================================
     LEGENDA DOS COMENTÁRIOS DE CHECKPOINT NESTE ARQUIVO:
     CP1 -> Estrutura HTML semântica + elementos de mídia (video, audio, iframe)
-    CP2 -> Responsividade (herdada do style.css)
     ================================================================
-    MODELO PRONTO PRA USAR:
-    - <video>: troque "midia/video-apresentacao.mp4" pelo caminho do seu vídeo.
-    - <audio>: troque "midia/audio.mp3" pelo caminho do seu áudio.
-    - <iframe>: troque o ID do YouTube pelo de um vídeo seu (ex: do seu canal @CortesYL).
-      Deixei um vídeo de exemplo (público, da própria Google) só pra você ver funcionando.
 -->
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,14 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
- 
-    <!-- CP3: JavaScript do menu mobile -->
-    <script src="menu.js" defer></script>
- 
+
     <title>Multimídia | Victor Gabriel</title>
 </head>
 <body class="pagina-interna">
- 
+
     <!-- ===== CP1: CABEÇALHO (igual ao restante do site) ===== -->
     <header>
         <div class="interface">
@@ -36,113 +27,74 @@
                     <img src="img/logo portifó 50x50.png" alt="Victor">
                 </a>
             </div><!--logo-->
- 
+
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="curriculo.html">Curriculo</a></li>
                     <li><a href="graficos.html">Gráficos</a></li>
                     <li><a href="multimidia.html" class="ativo">Multimídia</a></li>
+                    <li><a href="formulario.html">Contato</a></li>
                 </ul>
-            </nav>
- 
-            <div class="btn-contato">
-                <a href="formulario.html">
-                    <button>Contato</button>
-                </a>
-            </div><!--btn-contato-->
- 
-            <div class="btn-abrir-menu" id="btn-menu">
-                <i class="bi bi-list"></i>
-            </div>
- 
-            <div class="menu-mobile" id="menu-mobile">
-                <div class="btn-fechar">
-                    <i class="bi bi-x-lg"></i>
-                </div>
- 
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="curriculo.html">Curriculo</a></li>
-                        <li><a href="graficos.html">Gráficos</a></li>
-                        <li><a href="multimidia.html" class="ativo">Multimídia</a></li>
-                        <li><a href="formulario.html">Contato</a></li>
-                    </ul>
-                </nav>
-            </div><!--menu-mobile-->
-            <div class="overlay-menu" id="overlay-menu"></div>
+            </nav><!--menu-desktop-->
         </div><!--interface-->
     </header>
- 
+
     <!-- ===== CP1: CONTEÚDO PRINCIPAL ===== -->
     <main>
- 
+
         <!-- CP1: seção com o elemento <video> -->
         <section class="especiliadades" id="video">
             <div class="interface">
-                <h2 class="titulo">VÍDEO DE<span>APRESENTAÇÃO.</span></h2>
+                <h2 class="titulo">VÍDEO DE <span>APRESENTAÇÃO.</span></h2>
                 <p class="grafico-legenda">
                     Um vídeo curto contando um pouco sobre mim e o meu trabalho.
                 </p>
- 
+
                 <div class="midia-box">
-                    <!--
-                        TROQUE "midia/video-apresentacao.mp4" pelo caminho do seu vídeo.
-                        O poster é a imagem exibida antes de dar play.
-                    -->
                     <video controls poster="images/foto.png">
-                        <!--<source src="midia/video-apresentacao.mp4" type="video/mp4">-->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ejkb_YpuHWs?si=KDMyWnVwtK1RWpAc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        
+                        <source src="midia/video-apresentacao.mp4" type="video/mp4">
                         Seu navegador não suporta a reprodução de vídeo.
                     </video>
                 </div>
             </div><!--interface-->
         </section><!--especiliadades-->
- 
+
         <!-- CP1: seção com o elemento <audio> -->
         <section class="especiliadades" id="audio">
             <div class="interface">
                 <h2 class="titulo">ÁUDIO<span>.</span></h2>
                 <p class="grafico-legenda">
-                    Pequeno Áudio de Victor
+                    Uma narração curta ou trilha sonora que combina com o site.
                 </p>
- 
+
                 <div class="midia-box">
-                    <!-- TROQUE "midia/audio.mp3" pelo caminho do seu áudio -->
                     <audio controls>
-                        <source src="midia/WhatsApp Ptt 2026-09-14 at 22.03.42.ogg" type="audio/ogg">
+                        <source src="midia/WhatsApp Ptt 2026-09-14 at 22.03.42.ogg" type="audio/mpeg">
                         Seu navegador não suporta a reprodução de áudio.
                     </audio>
                 </div>
             </div><!--interface-->
         </section><!--especiliadades-->
- 
+
         <!-- CP1: seção com o elemento <iframe> -->
         <section class="especiliadades" id="video-externo">
             <div class="interface">
                 <h2 class="titulo">VÍDEO DO MEU<span>CANAL.</span></h2>
                 <p class="grafico-legenda">
-                    Um vídeo incorporado via iframe
+                    Um vídeo incorporado via iframe 
                 </p>
- 
+
                 <div class="midia-box midia-iframe">
-                 <!---  <iframe
-                        src="https://youtu.be/oTptR7O0KNI?si=OaGIJ0iIqWKZeQnd"
-                        title="Vídeo incorporado do YouTube"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe> -->
+                
 
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/oTptR7O0KNI?si=pSnKa0Zj-BrFFeYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
                 </div>
             </div><!--interface-->
         </section><!--especiliadades-->
- 
+
     </main>
- 
+
     <!-- ===== CP1: RODAPÉ (igual ao restante do site) ===== -->
     <footer>
         <div class="interface">
@@ -153,23 +105,18 @@
                     </div><!--logo-footer-->
                     <div class="btn-social">
                         <a href="https://www.instagram.com/oficial_victor29?igsh=b2t3cjRqdnI1MzE3" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
- 
                         <a href="mailto:gabrielmoraisdeoliveirav3@gmail.com"><button><i class="bi bi-envelope-at-fill"></i></button></a>
- 
                         <a href="https://www.linkedin.com/in/victor-gabriel-morais-0197a0286" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
- 
                         <a href="https://github.com/TagVictor" target="_blank"><button><i class="bi bi-github"></i></button></a>
- 
                     </div><!--btn-social-->
                 </div>
             </div><!--line-footer-->
- 
+
             <div class="line-footer borda">
                 <p><i class="bi bi-envelope-fill"></i><a href="mailto:gabrielmoraisdeoliveirav3@gmail.com">Envie-nos um e-mail</a></p>
             </div><!--line-footer-->
         </div><!--interface-->
     </footer>
- 
+
 </body>
 </html>
- 
