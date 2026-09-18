@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--
+    ================================================================
+    LEGENDA DOS COMENTÁRIOS DE CHECKPOINT NESTE ARQUIVO:
+    CP1 -> Estrutura HTML semântica (canvas e SVG ficam prontos na
+           estrutura; o desenho do canvas via JavaScript é conteúdo
+           do CP3, feito depois)
+    CP2 -> Responsividade (Flexbox + media queries, ver style.css)
+    ================================================================
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Gráficos | Victor Gabriel</title>
+</head>
+<body class="pagina-interna">
+
+    <!-- ===== CP1: CABEÇALHO (igual ao restante do site) ===== -->
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo portifó 50x50.png" alt="Victor">
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="curriculo.html">Curriculo</a></li>
+                    <li><a href="graficos.html" class="ativo">Gráficos</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="formulario.html">Contato</a></li>
+                </ul>
+            </nav><!--menu-desktop-->
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+        </div><!--interface-->
+    </header>
+
+    <!-- ===== CP1: CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- CP1: seção com o elemento <canvas> (estrutura pronta) -->
+        <section class="especiliadades" id="grafico-canvas">
+            <div class="interface">
+                <h2 class="titulo">GRÁFICO EM <span>CANVAS.</span></h2>
+                <p class="grafico-legenda">
+                    Meu nível atual nas linguagens que estou estudando.
+                </p>
+
+                <div class="grafico-box">
+                    <canvas id="canvas-habilidades" width="640" height="320">
+                        Seu navegador não suporta o elemento canvas.
+                    </canvas>
+                </div>
+            </div><!--interface-->
+        </section><!--especiliadades-->
+
+        <!-- CP1: seção com a ilustração em SVG -->
+        <section class="especiliadades" id="ilustracao-svg">
+            <div class="interface">
+                <h2 class="titulo">ILUSTRAÇÃO EM <span>SVG.</span></h2>
+                <p class="grafico-legenda">
+                    Um ícone desenhado em vetor: aumenta ou diminui de tamanho
+                    sem perder qualidade, ao contrário de uma imagem comum (.png/.jpg).
+                </p>
+
+                <div class="grafico-box">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="svg-ilustracao" role="img" aria-label="Ícone de um notebook com o símbolo de código">
+                        <rect x="30" y="40" width="140" height="90" rx="10" fill="none" stroke="rgb(0,225,255)" stroke-width="6"/>
+                        <rect x="15" y="135" width="170" height="14" rx="7" fill="rgb(0,225,255)"/>
+                        <path d="M70 65 L50 85 L70 105" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M130 65 L150 85 L130 105" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M112 60 L88 110" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div><!--interface-->
+        </section><!--especiliadades-->
+
+    </main>
+
+    <!-- ===== CP1: RODAPÉ (igual ao restante do site) ===== -->
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="img/logo portifó 50x50.png" alt="Logotipo Victor">
+                    </div><!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/oficial_victor29?igsh=b2t3cjRqdnI1MzE3" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="mailto:gabrielmoraisdeoliveirav3@gmail.com"><button><i class="bi bi-envelope-at-fill"></i></button></a>
+                        <a href="https://www.linkedin.com/in/victor-gabriel-morais-0197a0286" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
+                        <a href="https://github.com/TagVictor" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                    </div><!--btn-social-->
+                </div>
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i><a href="mailto:gabrielmoraisdeoliveirav3@gmail.com">Envie-nos um e-mail</a></p>
+            </div><!--line-footer-->
+        </div><!--interface-->
+    </footer>
+
+    <!-- Script simples, só pra ter algo desenhado no canvas por enquanto -->
+    <script>
+        const habilidades = [
+            { nome: "HTML5", nivel: 85 },
+            { nome: "CSS3", nivel: 80 },
+            { nome: "JavaScript", nivel: 55 },
+            { nome: "Python", nivel: 65 }
+        ];
+
+        const canvas = document.getElementById("canvas-habilidades");
+        const ctx = canvas.getContext("2d");
+
+        const largura = canvas.width;
+        const altura = canvas.height;
+        const margemInferior = 40;
+        const margemLateral = 60;
+        const larguraBarra = 90;
+        const espacoEntreBarras = 40;
+
+        habilidades.forEach((item, i) => {
+            const alturaBarra = (item.nivel / 100) * (altura - margemInferior - 30);
+            const x = margemLateral + i * (larguraBarra + espacoEntreBarras);
+            const y = altura - margemInferior - alturaBarra;
+
+            ctx.fillStyle = "rgb(0, 225, 255)";
+            ctx.fillRect(x, y, larguraBarra, alturaBarra);
+
+            ctx.fillStyle = "#fff";
+            ctx.font = "16px Poppins, sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(item.nivel + "%", x + larguraBarra / 2, y - 10);
+            ctx.fillText(item.nome, x + larguraBarra / 2, altura - margemInferior + 22);
+        });
+    </script>
+
+</body>
+</html>
