@@ -1,3 +1,9 @@
+ <div align="center">
+  <img src="https://shields.io" alt="Em Construção">
+  <p>🛠️ Este repositório está passando por atualizações importantes. Volte em breve!</p>
+</div>
+
+
 <div align="center">
 
 <img src="https://tagvictor.github.io/Portifolio/img/logo%20portif%C3%B3%2050x50.png" width="140" alt="Logo Victor Gabriel">
